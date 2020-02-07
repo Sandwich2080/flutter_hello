@@ -79,16 +79,16 @@ class _MyHomePageState extends State<MyHomePage> {
         timeInSecForIos: 1);
 
     switch (btnId) {
-      case Constants.PAGE_1:
+      case Constants.PAGE_NEW:
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => Page1()));
         break;
-      case Constants.PAGE_2:
+      case Constants.PAGE_LIST:
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => DataList()));
 
         break;
-      case Constants.PAGE_3:
+      case Constants.PAGE_LOGIN:
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => LoginPage()));
         break;
@@ -145,23 +145,23 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(wordPair.asCamelCase),
             MaterialButton(
               onPressed: () {
-                onButtonPress(Constants.PAGE_1);
+                onButtonPress(Constants.PAGE_NEW);
               },
               color: Colors.blue,
-              child: Text("Click me 1"),
+              child: Text("Open a new page"),
               textColor: Colors.white,
             ),
             MaterialButton(
               onPressed: () {
-                onButtonPress(Constants.PAGE_2);
+                onButtonPress(Constants.PAGE_LIST);
               },
               color: Colors.blue,
-              child: Text("Click me 2"),
+              child: Text("List"),
               textColor: Colors.white,
             ),
             MaterialButton(
               onPressed: () {
-                onButtonPress(Constants.PAGE_3);
+                onButtonPress(Constants.PAGE_LOGIN);
               },
               color: Colors.blue,
               child: Text("Login"),
