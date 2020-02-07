@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:flutter_hello/constants.dart';
 import 'package:flutter_hello/data_list.dart';
+import 'package:flutter_hello/login_page.dart';
 import 'package:flutter_hello/page1.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sprintf/sprintf.dart';
@@ -23,15 +25,15 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.deepOrange, //Colors.blue,
+        primarySwatch: Colors.blue, //Colors.deepOrange, //Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-const int PAGE_1 = 0x01;
-const int PAGE_2 = 0x02;
+//const int PAGE_1 = 0x01;
+//const int PAGE_2 = 0x02;
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -77,15 +79,20 @@ class _MyHomePageState extends State<MyHomePage> {
         timeInSecForIos: 1);
 
     switch (btnId) {
-      case PAGE_1:
+      case Constants.PAGE_1:
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => Page1()));
         break;
-      case PAGE_2:
+      case Constants.PAGE_2:
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => DataList()));
 
         break;
+      case Constants.PAGE_3:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => LoginPage()));
+        break;
+
       default:
         break;
     }
@@ -138,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(wordPair.asCamelCase),
             MaterialButton(
               onPressed: () {
-                onButtonPress(PAGE_1);
+                onButtonPress(Constants.PAGE_1);
               },
               color: Colors.blue,
               child: Text("Click me 1"),
@@ -146,10 +153,18 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             MaterialButton(
               onPressed: () {
-                onButtonPress(PAGE_2);
+                onButtonPress(Constants.PAGE_2);
               },
               color: Colors.blue,
               child: Text("Click me 2"),
+              textColor: Colors.white,
+            ),
+            MaterialButton(
+              onPressed: () {
+                onButtonPress(Constants.PAGE_3);
+              },
+              color: Colors.blue,
+              child: Text("Login"),
               textColor: Colors.white,
             ),
           ],
