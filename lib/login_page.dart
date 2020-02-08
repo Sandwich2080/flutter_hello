@@ -54,7 +54,7 @@ class LoginPageState extends State<LoginPage> {
       alignment: Alignment.topCenter,
       child: ClipOval(
         child: Image.asset(
-          "images/logo.png",
+          "assets/images/logo.png",
           height: 50,
           width: 50,
           fit: BoxFit.cover,
