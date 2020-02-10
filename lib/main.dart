@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:flutter_hello/common_layouts.dart';
 import 'package:flutter_hello/constants.dart';
 import 'package:flutter_hello/data_list.dart';
 import 'package:flutter_hello/login_page.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue, //Colors.deepOrange, //Colors.blue,
+        primarySwatch: Colors.blue//Colors.deepOrange, //Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -93,7 +94,10 @@ class _MyHomePageState extends State<MyHomePage> {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => LoginPage()));
         break;
-
+      case Constants.PAGE_COMMON_LAYOUTS:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => CommonLayouts()));
+        break;
       default:
         break;
     }
@@ -166,6 +170,14 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               color: Colors.blue,
               child: Text("Login"),
+              textColor: Colors.white,
+            ),
+            MaterialButton(
+              onPressed: () {
+                onButtonPress(Constants.PAGE_COMMON_LAYOUTS);
+              },
+              color: Colors.blue,
+              child: Text("Common Layouts in Flutter"),
               textColor: Colors.white,
             ),
           ],
