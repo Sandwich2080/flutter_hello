@@ -28,6 +28,8 @@ dependencies:
   sprintf: ^4.0.0
   flutter_screenutil: ^0.4.2
   font_awesome_flutter: ^8.2.0
+  path_provider: ^1.6.0
+  image_picker: ^0.6.3+1
 
 dev_dependencies:
   flutter_test:
@@ -77,4 +79,6 @@ flutter:
     # see https://flutter.dev/custom-fonts/#from-packages
   assets:
       - assets/images/logo.png
+      - assets/images/img_folder.png
+      - assets/images/img_file.png
 

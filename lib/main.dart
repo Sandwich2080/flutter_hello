@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
-import 'package:flutter_hello/common_layouts.dart';
+import 'package:flutter_hello/common/io/common_io.dart';
+import 'package:flutter_hello/common/layouts/common_layouts.dart';
 import 'package:flutter_hello/constants.dart';
 import 'package:flutter_hello/data_list.dart';
 import 'package:flutter_hello/login_page.dart';
@@ -98,6 +99,11 @@ class _MyHomePageState extends State<MyHomePage> {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => CommonLayouts()));
         break;
+      case Constants.PAGE_COMMON_IO:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => IOOperations()));
+        break;
+
       default:
         break;
     }
@@ -180,6 +186,16 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("Common Layouts in Flutter"),
               textColor: Colors.white,
             ),
+            MaterialButton(
+              onPressed: () {
+                onButtonPress(Constants.PAGE_COMMON_IO);
+              },
+              color: Colors.blue,
+              child: Text("IO Operations in Flutter"),
+              textColor: Colors.white,
+            ),
+
+
           ],
         ),
       ),
