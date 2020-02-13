@@ -19,7 +19,7 @@ class SDCardFilesState extends State<SDCardFiles> {
     super.initState();
 
     // Fetch external directories on SD Card.
-    /*getExternalStorageDirectories(type: StorageDirectory.dcim).then((List<Directory> dirs){
+    getExternalStorageDirectories(type: StorageDirectory.dcim).then((List<Directory> dirs){
       for(int i=0;i<dirs.length;i++){
         print("dcim:${dirs[i].path}");
       }
@@ -38,12 +38,12 @@ class SDCardFilesState extends State<SDCardFiles> {
       for(int i=0;i<dirs.length;i++){
         print("dcim:${dirs[i].path}");
       }
-    });*/
+    });
 
     getExternalStorageDirectory().then((d) {
       setState(() {
         sdDir = d.path;
-        files = d.parent.parent.parent.parent.listSync();
+        files = d.listSync();
 
         for (int i = 0; i < files.length; i++) {
           print("File: ${files[i].path}");
