@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hello/common/io/file_write_read.dart';
 import 'package:flutter_hello/common/io/read_external_files.dart';
+import 'package:flutter_hello/common/io/shared_preference.dart';
 
 class IOOperations extends StatefulWidget {
   @override
@@ -18,6 +19,12 @@ class IOOperationsState extends State<IOOperations> {
       case 1:
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => ReadExternalFiles()));
+        break;
+      case 2:
+        break;
+      case 3:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => SharedPreferenceExample()));
         break;
 
       default:
