@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_hello/common/utils/toast.dart';
 import 'package:path_provider/path_provider.dart';
 
 class SDCardFiles extends StatefulWidget {
@@ -18,7 +19,7 @@ class SDCardFilesState extends State<SDCardFiles> {
     super.initState();
 
     // Fetch external directories on SD Card.
-    getExternalStorageDirectories(type: StorageDirectory.dcim).then((List<Directory> dirs){
+    /*getExternalStorageDirectories(type: StorageDirectory.dcim).then((List<Directory> dirs){
       for(int i=0;i<dirs.length;i++){
         print("dcim:${dirs[i].path}");
       }
@@ -37,12 +38,12 @@ class SDCardFilesState extends State<SDCardFiles> {
       for(int i=0;i<dirs.length;i++){
         print("dcim:${dirs[i].path}");
       }
-    });
+    });*/
 
     getExternalStorageDirectory().then((d) {
       setState(() {
         sdDir = d.path;
-        files = d.listSync();
+        files = d.parent.parent.parent.parent.listSync();
 
         for (int i = 0; i < files.length; i++) {
           print("File: ${files[i].path}");
@@ -61,7 +62,6 @@ class SDCardFilesState extends State<SDCardFiles> {
         itemCount: files == null ? 0 : files.length,
         itemBuilder: (BuildContext context, int index) =>
             buildListItem(files[index]),
-        
       ),
     );
   }
@@ -71,7 +71,7 @@ class SDCardFilesState extends State<SDCardFiles> {
 
     var fileStat = file.statSync();
 
-
+    // Using 'GestureDetector' to wrap 'Card' to implement the feature of 'onItemClick'.
     return GestureDetector(
       child: Card(
         margin: EdgeInsets.all(10.0),
@@ -98,9 +98,10 @@ class SDCardFilesState extends State<SDCardFiles> {
           ],
         ),
       ),
-      onTap: (){onItemClick(file);},
+      onTap: () {
+        onItemClick(file);
+      },
     );
-
 
     /*return Card(
       margin: EdgeInsets.all(10.0),
@@ -129,8 +130,9 @@ class SDCardFilesState extends State<SDCardFiles> {
     );*/
   }
 
-  void onItemClick(FileSystemEntity file){
+  void onItemClick(FileSystemEntity file) {
     print("${file.path} is clicked");
+    ToastUtil.show(
+        "${file.path} is a ${FileSystemEntity.isFileSync(file.path) ? "file" : "directory"}");
   }
-
 }

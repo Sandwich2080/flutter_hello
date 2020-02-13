@@ -1,12 +1,12 @@
-import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_hello/common/io/common_io.dart';
 import 'package:flutter_hello/common/layouts/common_layouts.dart';
+import 'package:flutter_hello/common/utils/toast.dart';
 import 'package:flutter_hello/constants.dart';
 import 'package:flutter_hello/data_list.dart';
 import 'package:flutter_hello/login_page.dart';
 import 'package:flutter_hello/page1.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sprintf/sprintf.dart';
 
 void main() => runApp(MyApp());
@@ -73,13 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void onButtonPress(int btnId) {
     String _msg = sprintf("Button is clicked %d", [btnId]);
 
-    Fluttertoast.showToast(
-        msg: _msg,
-        gravity: ToastGravity.BOTTOM,
-        toastLength: Toast.LENGTH_SHORT,
-        backgroundColor: Colors.amberAccent,
-        textColor: Colors.black,
-        timeInSecForIos: 1);
+    ToastUtil.show(_msg);
 
     switch (btnId) {
       case Constants.PAGE_NEW:
