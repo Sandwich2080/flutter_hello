@@ -42,7 +42,7 @@ class SharedPreferenceExampleState extends State<SharedPreferenceExample> {
             decoration: InputDecoration(
               icon: Icon(Icons.person),
               labelText: "Input username",
-              helperText: "Your username.",
+              helperText: "Your registered username.",
             ),
             onChanged: (String content) {
               username = content;
@@ -57,7 +57,7 @@ class SharedPreferenceExampleState extends State<SharedPreferenceExample> {
                 child: Text("Save"),
               ),
               SizedBox(
-                width: 10,
+                width: 15,
               ),
               Text(savedUsername == null
                   ? ""
@@ -73,7 +73,7 @@ class SharedPreferenceExampleState extends State<SharedPreferenceExample> {
                 child: Text("Read"),
               ),
               SizedBox(
-                width: 10,
+                width: 15,
               ),
               Text(readUsername == null
                   ? ""
