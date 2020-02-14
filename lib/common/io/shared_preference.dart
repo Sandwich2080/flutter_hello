@@ -25,7 +25,15 @@ class SharedPreferenceExampleState extends State<SharedPreferenceExample> {
 
   String username;
 
+  TextEditingController textEditingController;
+
   Widget buildBody() {
+    textEditingController = TextEditingController.fromValue(TextEditingValue(
+        text: displayedInputName(),
+        selection: TextSelection.fromPosition(TextPosition(
+            affinity: TextAffinity.downstream,
+            offset: readUsername == null ? 0 : readUsername.length)),
+        composing: TextRange.empty));
     return Container(
       margin: EdgeInsets.all(10),
       child: Column(
@@ -33,12 +41,7 @@ class SharedPreferenceExampleState extends State<SharedPreferenceExample> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           TextField(
-            controller: TextEditingController.fromValue(TextEditingValue(
-                text: displayedInputName(),
-                selection: TextSelection.fromPosition(TextPosition(
-                    affinity: TextAffinity.downstream,
-                    offset: readUsername == null ? 0 : readUsername.length)),
-                composing: TextRange.empty)),
+            controller: textEditingController,
             decoration: InputDecoration(
               icon: Icon(Icons.person),
               labelText: "Input username",
@@ -100,7 +103,7 @@ class SharedPreferenceExampleState extends State<SharedPreferenceExample> {
   String readUsername;
 
   void save() async {
-    if(username!=null){
+    if (username != null) {
       SharedPreferences sp = await SharedPreferences.getInstance();
       sp.setString("username", username);
     }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hello/common/io/db_operations.dart';
 import 'package:flutter_hello/common/io/file_write_read.dart';
 import 'package:flutter_hello/common/io/read_external_files.dart';
 import 'package:flutter_hello/common/io/shared_preference.dart';
@@ -21,6 +22,8 @@ class IOOperationsState extends State<IOOperations> {
             MaterialPageRoute(builder: (context) => ReadExternalFiles()));
         break;
       case 2:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => DbOperations()));
         break;
       case 3:
         Navigator.push(context,
