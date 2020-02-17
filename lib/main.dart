@@ -2,6 +2,7 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hello/common/io/common_io.dart';
 import 'package:flutter_hello/common/layouts/common_layouts.dart';
+import 'package:flutter_hello/common/network/common_network.dart';
 import 'package:flutter_hello/common/utils/toast.dart';
 import 'package:flutter_hello/constants.dart';
 import 'package:flutter_hello/data_list.dart';
@@ -19,17 +20,17 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false, //去掉右上角debug标记
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue//Colors.deepOrange, //Colors.blue,
-      ),
+          // This is the theme of your application.
+          //
+          // Try running your application with "flutter run". You'll see the
+          // application has a blue toolbar. Then, without quitting the app, try
+          // changing the primarySwatch below to Colors.green and then invoke
+          // "hot reload" (press "r" in the console where you ran "flutter run",
+          // or simply save your changes to "hot reload" in a Flutter IDE).
+          // Notice that the counter didn't reset back to zero; the application
+          // is not restarted.
+          primarySwatch: Colors.blue //Colors.deepOrange, //Colors.blue,
+          ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -97,7 +98,10 @@ class _MyHomePageState extends State<MyHomePage> {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => IOOperations()));
         break;
-
+      case Constants.PAGE_NETWORK:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => CommonNetwork()));
+        break;
       default:
         break;
     }
@@ -188,8 +192,14 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("IO Operations in Flutter"),
               textColor: Colors.white,
             ),
-
-
+            MaterialButton(
+              onPressed: () {
+                onButtonPress(Constants.PAGE_NETWORK);
+              },
+              color: Colors.blue,
+              child: Text("Network"),
+              textColor: Colors.white,
+            ),
           ],
         ),
       ),
