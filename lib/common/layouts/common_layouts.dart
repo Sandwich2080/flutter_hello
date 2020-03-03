@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hello/common/layouts/card_example.dart';
 import 'package:flutter_hello/common/layouts/common_layout_constants.dart';
 import 'package:flutter_hello/common/layouts/container_example.dart';
+import 'package:flutter_hello/common/layouts/draggable_example.dart';
 import 'package:flutter_hello/common/layouts/gridview_example.dart';
 import 'package:flutter_hello/common/layouts/listview_example.dart';
 import 'package:flutter_hello/common/layouts/stack_example.dart';
@@ -35,7 +36,10 @@ class CommonLayoutsState extends State<CommonLayouts> {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => CardExample()));
         break;
-
+      case CommonLayoutConstants.LAYOUT_DRAGGABLE:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => DraggableExample()));
+        break;
       default:
         break;
     }
@@ -89,6 +93,14 @@ class CommonLayoutsState extends State<CommonLayouts> {
                   onButtonClicked(CommonLayoutConstants.LAYOUT_CARD);
                 },
                 child: Text("Card"),
+                color: Colors.blue,
+                textColor: Colors.white,
+              ),
+              MaterialButton(
+                onPressed: () {
+                  onButtonClicked(CommonLayoutConstants.LAYOUT_DRAGGABLE);
+                },
+                child: Text("Draggable"),
                 color: Colors.blue,
                 textColor: Colors.white,
               )
