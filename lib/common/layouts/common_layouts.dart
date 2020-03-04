@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hello/common/layouts/card_example.dart';
 import 'package:flutter_hello/common/layouts/common_layout_constants.dart';
 import 'package:flutter_hello/common/layouts/container_example.dart';
-import 'package:flutter_hello/common/layouts/draggable_example.dart';
+import 'package:flutter_hello/common/gestures/draggable_example.dart';
 import 'package:flutter_hello/common/layouts/gridview_example.dart';
 import 'package:flutter_hello/common/layouts/listview_example.dart';
 import 'package:flutter_hello/common/layouts/stack_example.dart';

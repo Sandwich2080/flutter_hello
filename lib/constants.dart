@@ -5,4 +5,6 @@ class Constants {
   static const int PAGE_COMMON_LAYOUTS = 0x04;
   static const int PAGE_COMMON_IO = 0x05;
   static const int PAGE_NETWORK = 0x06;
+  static const int PAGE_GESTURES = 0x07;
+  static const int PAGE_ANIMATIONS = 0x08;
 }

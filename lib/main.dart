@@ -1,5 +1,7 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hello/common/animations/common_animations.dart';
+import 'package:flutter_hello/common/gestures/common_gestures.dart';
 import 'package:flutter_hello/common/io/common_io.dart';
 import 'package:flutter_hello/common/layouts/common_layouts.dart';
 import 'package:flutter_hello/common/network/common_network.dart';
@@ -102,6 +104,14 @@ class _MyHomePageState extends State<MyHomePage> {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => CommonNetwork()));
         break;
+      case Constants.PAGE_GESTURES:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => CommonGestures()));
+        break;
+      case Constants.PAGE_ANIMATIONS:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => CommonAnimations()));
+        break;
       default:
         break;
     }
@@ -200,6 +210,22 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("Network"),
               textColor: Colors.white,
             ),
+            MaterialButton(
+              onPressed: () {
+                onButtonPress(Constants.PAGE_GESTURES);
+              },
+              color: Colors.blue,
+              child: Text("Gestures"),
+              textColor: Colors.white,
+            ),
+            MaterialButton(
+              onPressed: () {
+                onButtonPress(Constants.PAGE_ANIMATIONS);
+              },
+              color: Colors.blue,
+              child: Text("Animations"),
+              textColor: Colors.white,
+            )
           ],
         ),
       ),
