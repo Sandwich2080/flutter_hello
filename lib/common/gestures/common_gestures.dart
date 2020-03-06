@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hello/common/gestures/draggable_example.dart';
+import 'package:flutter_hello/common/gestures/listener_example.dart';
 
 class CommonGestures extends StatefulWidget {
   @override
@@ -7,7 +8,7 @@ class CommonGestures extends StatefulWidget {
 }
 
 class CommonGesturesState extends State<CommonGestures> {
-  List<String> _gestureStrs = ["Draggable"];
+  List<String> _gestureStrs = ["Draggable", "Listener"];
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +44,10 @@ class CommonGesturesState extends State<CommonGestures> {
       case 0:
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (context) => DraggableExample()));
+        break;
+      case 1:
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => ListenerExample()));
         break;
       default:
         break;
