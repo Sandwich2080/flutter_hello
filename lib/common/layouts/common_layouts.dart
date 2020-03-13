@@ -91,8 +91,31 @@ class CommonLayoutsState extends State<CommonLayouts> {
                 color: Colors.blue,
                 textColor: Colors.white,
               ),
+              MaterialButton(
+                onPressed: () {
+                  _showCustomDialog();
+                },
+                child: Text("Dialog"),
+                color: Colors.blue,
+                textColor: Colors.white,
+              ),
             ],
           ),
         ));
+  }
+
+  void _showCustomDialog() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return SimpleDialog(
+            children: <Widget>[
+              Center(child: Text(
+                "保存图片",
+                style: TextStyle(color: Colors.black,fontSize: 20),
+              ),)
+            ],
+          );
+        });
   }
 }
