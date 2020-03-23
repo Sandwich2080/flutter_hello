@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hello/common/layouts/card_example.dart';
 import 'package:flutter_hello/common/layouts/common_layout_constants.dart';
 import 'package:flutter_hello/common/layouts/container_example.dart';
+import 'package:flutter_hello/common/layouts/dialogs_example.dart';
 import 'package:flutter_hello/common/layouts/gridview_example.dart';
 import 'package:flutter_hello/common/layouts/listview_example.dart';
 import 'package:flutter_hello/common/layouts/stack_example.dart';
@@ -93,9 +94,9 @@ class CommonLayoutsState extends State<CommonLayouts> {
               ),
               MaterialButton(
                 onPressed: () {
-                  _showCustomDialog();
+                  _gotoDialogExamples();
                 },
-                child: Text("Dialog"),
+                child: Text("Dialogs"),
                 color: Colors.blue,
                 textColor: Colors.white,
               ),
@@ -104,18 +105,8 @@ class CommonLayoutsState extends State<CommonLayouts> {
         ));
   }
 
-  void _showCustomDialog() {
-    showDialog(
-        context: context,
-        builder: (context) {
-          return SimpleDialog(
-            children: <Widget>[
-              Center(child: Text(
-                "保存图片",
-                style: TextStyle(color: Colors.black,fontSize: 20),
-              ),)
-            ],
-          );
-        });
+  void _gotoDialogExamples() {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => DialogsExample()));
   }
 }
