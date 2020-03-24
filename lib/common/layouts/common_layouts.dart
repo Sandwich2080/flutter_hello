@@ -6,6 +6,7 @@ import 'package:flutter_hello/common/layouts/dialogs_example.dart';
 import 'package:flutter_hello/common/layouts/gridview_example.dart';
 import 'package:flutter_hello/common/layouts/listview_example.dart';
 import 'package:flutter_hello/common/layouts/stack_example.dart';
+import 'package:flutter_hello/common/layouts/visibility_detector_example.dart';
 
 ///  Flutter中常用布局的使用
 class CommonLayouts extends StatefulWidget {
@@ -100,9 +101,22 @@ class CommonLayoutsState extends State<CommonLayouts> {
                 color: Colors.blue,
                 textColor: Colors.white,
               ),
+              MaterialButton(
+                onPressed: () {
+                  _gotoVisibilityDetector();
+                },
+                child: Text("Visibility Detector"),
+                color: Colors.blue,
+                textColor: Colors.white,
+              ),
             ],
           ),
         ));
+  }
+
+  void _gotoVisibilityDetector() {
+    Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => VisibilityDetectorExample()));
   }
 
   void _gotoDialogExamples() {
