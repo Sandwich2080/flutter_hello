@@ -7,4 +7,5 @@ class Constants {
   static const int PAGE_NETWORK = 0x06;
   static const int PAGE_GESTURES = 0x07;
   static const int PAGE_ANIMATIONS = 0x08;
+  static const int PAGE_FUTURE = 0x09;
 }

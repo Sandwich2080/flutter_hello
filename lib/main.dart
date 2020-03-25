@@ -1,6 +1,7 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hello/common/animations/common_animations.dart';
+import 'package:flutter_hello/common/future/future_task_and_thread.dart';
 import 'package:flutter_hello/common/gestures/common_gestures.dart';
 import 'package:flutter_hello/common/io/common_io.dart';
 import 'package:flutter_hello/common/layouts/common_layouts.dart';
@@ -109,8 +110,12 @@ class _MyHomePageState extends State<MyHomePage> {
             context, MaterialPageRoute(builder: (context) => CommonGestures()));
         break;
       case Constants.PAGE_ANIMATIONS:
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => CommonAnimations()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => CommonAnimations()));
+        break;
+      case Constants.PAGE_FUTURE:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => FutureTaskAndThread()));
         break;
       default:
         break;
@@ -225,7 +230,15 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.blue,
               child: Text("Animations"),
               textColor: Colors.white,
-            )
+            ),
+            MaterialButton(
+              onPressed: () {
+                onButtonPress(Constants.PAGE_FUTURE);
+              },
+              color: Colors.blue,
+              child: Text("Future Task & Thread"),
+              textColor: Colors.white,
+            ),
           ],
         ),
       ),

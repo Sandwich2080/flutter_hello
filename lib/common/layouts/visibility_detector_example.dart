@@ -29,7 +29,7 @@ class _VisibilityDetectorExampleState extends State<VisibilityDetectorExample> {
           style: TextStyle(fontSize: 24),
         ),
       ), onVisibilityChanged: (visibilityInfo){
-          print("$index: ${visibilityInfo.visibleFraction}");
+          print("${pages[index]}: visible->${visibilityInfo.visibleFraction.compareTo(1.0)==0}");
       });
     });
 
