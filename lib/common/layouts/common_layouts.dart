@@ -6,6 +6,7 @@ import 'package:flutter_hello/common/layouts/dialogs_example.dart';
 import 'package:flutter_hello/common/layouts/gridview_example.dart';
 import 'package:flutter_hello/common/layouts/listview_example.dart';
 import 'package:flutter_hello/common/layouts/stack_example.dart';
+import 'package:flutter_hello/common/layouts/vertical_autoswitch_pager.dart';
 import 'package:flutter_hello/common/layouts/visibility_detector_example.dart';
 
 ///  Flutter中常用布局的使用
@@ -109,9 +110,22 @@ class CommonLayoutsState extends State<CommonLayouts> {
                 color: Colors.blue,
                 textColor: Colors.white,
               ),
+              MaterialButton(
+                onPressed: () {
+                  _gotoVerticalPager();
+                },
+                child: Text("Vertical Pager"),
+                color: Colors.blue,
+                textColor: Colors.white,
+              ),
             ],
           ),
         ));
+  }
+
+  void _gotoVerticalPager() {
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => VerticalAutoSwitchPagerExample()));
   }
 
   void _gotoVisibilityDetector() {
