@@ -23,7 +23,7 @@ class _ShadowExampleState extends State<ShadowExample> {
           shadowColor:  Color(0x24000000).withOpacity(.08),
           color: Colors.white,
           child: SizedBox(
-            width: MediaQuery.of(context).size.width,
+            width: MediaQuery.of(context).size.width-30,
             height: 56,
           ),
         ),
