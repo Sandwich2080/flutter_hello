@@ -36,6 +36,9 @@ dependencies:
   dio: ^3.0.8
   visibility_detector: ^0.1.4
   flutter_swiper: ^1.1.6
+  image_gallery_saver:
+    git:
+      url: https://github.com/Sandwich2080/image_gallery_saver.git
 
 dev_dependencies:
   flutter_test:

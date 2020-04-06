@@ -5,6 +5,7 @@ import 'package:flutter_hello/common/future/future_task_and_thread.dart';
 import 'package:flutter_hello/common/gestures/common_gestures.dart';
 import 'package:flutter_hello/common/io/common_io.dart';
 import 'package:flutter_hello/common/layouts/common_layouts.dart';
+import 'package:flutter_hello/common/media/media_access_examples.dart';
 import 'package:flutter_hello/common/network/common_network.dart';
 import 'package:flutter_hello/common/utils/toast.dart';
 import 'package:flutter_hello/constants.dart';
@@ -116,6 +117,10 @@ class _MyHomePageState extends State<MyHomePage> {
       case Constants.PAGE_FUTURE:
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => FutureTaskAndThread()));
+        break;
+      case Constants.PAGE_MEDIA:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => MediaAccessExamples()));
         break;
       default:
         break;
@@ -237,6 +242,14 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               color: Colors.blue,
               child: Text("Future Task & Thread"),
+              textColor: Colors.white,
+            ),
+            MaterialButton(
+              onPressed: () {
+                onButtonPress(Constants.PAGE_MEDIA);
+              },
+              color: Colors.blue,
+              child: Text("Media Access Examples"),
               textColor: Colors.white,
             ),
           ],
