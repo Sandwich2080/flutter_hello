@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hello/common/utils/toast.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class ImageSaveExample extends StatefulWidget {
   @override
@@ -13,6 +14,18 @@ class ImageSaveExample extends StatefulWidget {
 class _ImageSaveExampleState extends State<ImageSaveExample> {
   var _imageUrl =
       "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1585829049863&di=0fe537a3a3aa640cbeac2ec0a753e8c9&imgtype=0&src=http%3A%2F%2Ff.hiphotos.baidu.com%2Fbaike%2Fs%253D220%2Fsign%3De03c0bc3f3deb48fff69a6dcc01e3aef%2Fc83d70cf3bc79f3de51a7592baa1cd11738b299c.jpg";
+
+  @override
+  void initState() {
+    super.initState();
+    _requestPermission();
+  }
+
+  _requestPermission() async {
+    var permissionHandler = PermissionHandler();
+    //just request permissions
+    permissionHandler.requestPermissions([PermissionGroup.storage,PermissionGroup.photos]);
+  }
 
   @override
   Widget build(BuildContext context) {

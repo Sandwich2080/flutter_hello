@@ -161,7 +161,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "1a0451a098272e04ae2abf370ef7c97dde5a2047"
+      resolved-ref: c9dda692e4319ea206a5c3b850aec09149c15408
       url: "https://github.com/Sandwich2080/image_gallery_saver.git"
     source: git
     version: "1.2.2"
@@ -221,6 +221,20 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.8.0+1"
+  permission_handler:
+    dependency: "direct main"
+    description:
+      name: permission_handler
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "4.4.0+hotfix.4"
+  permission_handler_platform_interface:
+    dependency: transitive
+    description:
+      name: permission_handler_platform_interface
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.0"
   petitparser:
     dependency: transitive
     description:

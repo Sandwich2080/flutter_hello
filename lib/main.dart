@@ -5,6 +5,7 @@ import 'package:flutter_hello/common/future/future_task_and_thread.dart';
 import 'package:flutter_hello/common/gestures/common_gestures.dart';
 import 'package:flutter_hello/common/io/common_io.dart';
 import 'package:flutter_hello/common/layouts/common_layouts.dart';
+import 'package:flutter_hello/common/media/image_save_example.dart';
 import 'package:flutter_hello/common/media/media_access_examples.dart';
 import 'package:flutter_hello/common/network/common_network.dart';
 import 'package:flutter_hello/common/utils/toast.dart';
@@ -13,6 +14,8 @@ import 'package:flutter_hello/data_list.dart';
 import 'package:flutter_hello/login_page.dart';
 import 'package:flutter_hello/page1.dart';
 import 'package:sprintf/sprintf.dart';
+
+const bool IS_HOME = false;
 
 void main() => runApp(MyApp());
 
@@ -35,9 +38,13 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue //Colors.deepOrange, //Colors.blue,
           ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: buildMyHomePage(),
     );
   }
+
+  Widget buildMyHomePage() => IS_HOME
+      ? MyHomePage(title: 'Flutter Demo Home Page')
+      : ImageSaveExample();
 }
 
 //const int PAGE_1 = 0x01;
