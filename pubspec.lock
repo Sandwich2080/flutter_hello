@@ -159,11 +159,9 @@ packages:
   image_gallery_saver:
     dependency: "direct main"
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: c9dda692e4319ea206a5c3b850aec09149c15408
-      url: "https://github.com/Sandwich2080/image_gallery_saver.git"
-    source: git
+      path: "custom_plugins/image_gallery_saver"
+      relative: true
+    source: path
     version: "1.2.2"
   image_picker:
     dependency: "direct main"

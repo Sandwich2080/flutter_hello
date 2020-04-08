@@ -38,9 +38,7 @@ dependencies:
   flutter_swiper: ^1.1.6
   permission_handler: '^4.2.0+hotfix.3'
   image_gallery_saver:
-    git:
-      url: https://github.com/Sandwich2080/image_gallery_saver.git
-
+    path: custom_plugins/image_gallery_saver
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -86,9 +84,9 @@ flutter:
     #         weight: 700
     #
     # For details regarding fonts from package dependencies,
-    # see https://flutter.dev/custom-fonts/#from-packages
+  # see https://flutter.dev/custom-fonts/#from-packages
   assets:
-      - assets/images/logo.png
-      - assets/images/img_folder.png
-      - assets/images/img_file.png
+    - assets/images/logo.png
+    - assets/images/img_folder.png
+    - assets/images/img_file.png
 
