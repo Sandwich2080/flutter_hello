@@ -132,7 +132,7 @@ class LoginPageState extends State<LoginPage> {
         color: Colors.blue[300],
         child: Text(
           "Login",
-          style: Theme.of(context).primaryTextTheme.headline,
+          style: Theme.of(context).primaryTextTheme.headline5,
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),

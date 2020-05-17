@@ -9,4 +9,5 @@ class Constants {
   static const int PAGE_ANIMATIONS = 0x08;
   static const int PAGE_FUTURE = 0x09;
   static const int PAGE_MEDIA = 0xa0;
+  static const int PAGE_IMAGE_SAVE = 0xa1;
 }

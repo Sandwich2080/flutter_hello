@@ -15,7 +15,9 @@ import 'package:flutter_hello/login_page.dart';
 import 'package:flutter_hello/page1.dart';
 import 'package:sprintf/sprintf.dart';
 
-const bool IS_HOME = false;
+import 'common/media/image_save_example.dart';
+
+const bool IS_HOME = true;
 
 void main() => runApp(MyApp());
 
@@ -129,6 +131,10 @@ class _MyHomePageState extends State<MyHomePage> {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => MediaAccessExamples()));
         break;
+      case Constants.PAGE_IMAGE_SAVE:
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => ImageSaveExample()));
+        break;
       default:
         break;
     }
@@ -174,10 +180,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               'You have pushed the button this many times:',
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
+            Text('$_counter', style: Theme.of(context).textTheme.headline4),
             Text(wordPair.asCamelCase),
             MaterialButton(
               onPressed: () {
@@ -257,6 +260,14 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               color: Colors.blue,
               child: Text("Media Access Examples"),
+              textColor: Colors.white,
+            ),
+            MaterialButton(
+              onPressed: () {
+                onButtonPress(Constants.PAGE_IMAGE_SAVE);
+              },
+              color: Colors.blue,
+              child: Text("Image Save to Gallery Example"),
               textColor: Colors.white,
             ),
           ],
