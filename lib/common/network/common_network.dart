@@ -70,7 +70,7 @@ class CommonNetworkState extends State<CommonNetwork> {
           children: <Widget>[
             horizontalButtons,
             SizedBox(
-              height: 760,
+              height: 620,
               width: 400,
               child: Card(
                 child: Padding(
